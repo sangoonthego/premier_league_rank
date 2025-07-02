@@ -1,13 +1,13 @@
 team_power = {
-    "MCI": 95,   
-    "ARS": 90,   
-    "LIV": 88,   
-    "AVL": 85,   
+    "MCI": 92,   
+    "ARS": 88,   
+    "LIV": 93,   
+    "AVL": 86,   
     "NEW": 84,   
-    "TOT": 83,   
-    "CHE": 82,   
+    "TOT": 85,   
+    "CHE": 84,   
     "BHA": 80,   
-    "MUN": 78,   # Manchester United (bottom of society)
+    "MUN": 81,   # Manchester United (bottom of society)
     "WHU": 76,   
     "CRY": 75,
     "BRE": 74,

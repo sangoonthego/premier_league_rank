@@ -1,6 +1,8 @@
 import numpy as np
 from data.team_power import team_power
 
+BIG_SIX = {"MUN", "MCI", "LIV", "ARS", "CHE", "TOT"}
+
 def simulate_match(home, away):
     home_power = team_power.get(home, 75)
     away_power = team_power.get(away, 75)
@@ -13,6 +15,16 @@ def simulate_match(home, away):
     if away_power < 75 and home == "MUN":
         away_power += 5
 
+    if home == "BHA" and away in BIG_SIX:
+        home_power += 10
+    if away == "BHA" and home in BIG_SIX:
+        away_power += 10
+        
+    if home == "TOT" and away == "MCI":
+        home_power += 10
+    if away == "TOT" and home == "MCI":
+        away_power += 10
+            
     home_goals = np.random.poisson(home_goal_avg)
     away_goals = np.random.poisson(away_goal_avg)
 
