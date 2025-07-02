@@ -7,9 +7,6 @@ def simulate_match(home, away):
     home_power = team_power.get(home, 75)
     away_power = team_power.get(away, 75)
 
-    home_goal_avg = (home_power / 100) * 3
-    away_goal_avg = (away_power / 100) * 3
-
     if home_power < 75 and away == "MUN":
         home_power += 10
     if away_power < 75 and home == "MUN":
@@ -24,7 +21,10 @@ def simulate_match(home, away):
         home_power += 10
     if away == "TOT" and home == "MCI":
         away_power += 10
-            
+
+    home_goal_avg = (home_power / 100) * 3
+    away_goal_avg = (away_power / 100) * 3
+
     home_goals = np.random.poisson(home_goal_avg)
     away_goals = np.random.poisson(away_goal_avg)
 
