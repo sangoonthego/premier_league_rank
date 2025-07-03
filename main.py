@@ -9,7 +9,7 @@ alias_to_full = {alias: team for team, (alias, _) in teams_info.items()}
 alias_to_stadium = {alias: stadium for team, (alias, stadium) in teams_info.items()}
 
 schedule = create_full_schedule(alias_map)
-start_date = datetime(2025, 8, 10)
+start_date = datetime(2024, 8, 10)
 time_options = ["18:30", "20:00", "21:00", "22:00", "02:00"]
 
 standings = create_standings(alias_map)

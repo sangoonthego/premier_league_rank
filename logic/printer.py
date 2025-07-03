@@ -19,13 +19,12 @@ def print_matchweek(week, matches, alias_to_full, alias_to_stadium, match_date, 
 
         print(f"{home_full} {home_goals} - {away_goals} {away_full} - {date_str} - {time} - {stadium}")
 
-        is_big_match = home in BIG_SIX and away in BIG_SIX
+        # is_big_match = home in BIG_SIX and away in BIG_SIX
 
-        match_line = f"{home_full} {home_goals} - {away_goals} {away_full} - {date_str} - {time} - {stadium}"
-        if is_big_match:
-            print(match_line)
+        # match_line = f"{home_full} {home_goals} - {away_goals} {away_full} - {date_str} - {time} - {stadium}"
+        # if is_big_match:
+        #     print(match_line)
         
-
         update_standings(standings, home, away, home_goals, away_goals)
 
 def print_standings(standings, alias_to_full):

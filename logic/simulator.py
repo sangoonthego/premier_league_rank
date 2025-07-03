@@ -3,10 +3,7 @@ from data.team_power import team_power
 
 BIG_SIX = {"MUN", "MCI", "LIV", "ARS", "CHE", "TOT"}
 
-def simulate_match(home, away):
-    home_power = team_power.get(home, 75)
-    away_power = team_power.get(away, 75)
-
+def special_rules(home, away, home_power, away_power):
     if home_power < 75 and away == "MUN":
         home_power += 10
     if away_power < 75 and home == "MUN":
@@ -22,8 +19,14 @@ def simulate_match(home, away):
     if away == "TOT" and home == "MCI":
         away_power += 10
 
-    home_goal_avg = (home_power / 100) * 3
-    away_goal_avg = (away_power / 100) * 3
+def simulate_match(home, away):
+    home_power = team_power.get(home, 75)
+    away_power = team_power.get(away, 75)
+
+    special_rules(home, away, home_power, away_power)
+
+    home_goal_avg = (home_power / 100) * 2.5
+    away_goal_avg = (away_power / 100) * 2
 
     home_goals = np.random.poisson(home_goal_avg)
     away_goals = np.random.poisson(away_goal_avg)
